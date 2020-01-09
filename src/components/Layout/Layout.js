@@ -1,5 +1,5 @@
 import React from 'react';
-import Aux from '../../hoc/..';
+import Aux from '../../hoc/Auxiliary';
 
 const layout = ( props ) => (
     <Aux>
@@ -9,3 +9,5 @@ const layout = ( props ) => (
     </main>
     </Aux>
 );
+
+export default layout;
