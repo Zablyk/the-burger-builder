@@ -1,46 +1,46 @@
-import React, { Component } from './node_modules/react';
-import PropTypes from './node_modules/prop-types';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import classes from './BurgerIngredient';
+import classes from './BurgerIngredient.css';
 
 class BurgerIngredient extends Component {
     render () {
         let ingredient = null;
 
-        switch (this.props.type) {
-            case ('bread-bottom'):
+        switch ( this.props.type ) {
+            case ( 'bread-bottom' ):
                 ingredient = <div className={classes.BreadBottom}></div>;
                 break;
-            case ('bread-top'):
+            case ( 'bread-top' ):
                 ingredient = (
-                    <div> className={classes.BreadTop}
+                    <div className={classes.BreadTop}>
                         <div className={classes.Seeds1}></div>
                         <div className={classes.Seeds2}></div>
                     </div>
                 );
                 break;
-            case ('meat'):
+            case ( 'meat' ):
                 ingredient = <div className={classes.Meat}></div>;
                 break;
-            case ('chese'):
+            case ( 'cheese' ):
                 ingredient = <div className={classes.Cheese}></div>;
-                break;  
-            case ('bacon'):
+                break;
+            case ( 'bacon' ):
                 ingredient = <div className={classes.Bacon}></div>;
                 break;
-            case ('salad'):
+            case ( 'salad' ):
                 ingredient = <div className={classes.Salad}></div>;
                 break;
-            default: 
+            default:
                 ingredient = null;
         }
-            return ingredient;
-        }
-    };
 
-    BurgerIngredient.propTypes = {
-        type: PropTypes.string.isRequired
-    };
+        return ingredient;
+    }
+}
 
+BurgerIngredient.propTypes = {
+    type: PropTypes.string.isRequired
+};
 
 export default BurgerIngredient;
