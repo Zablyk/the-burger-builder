@@ -1,7 +1,17 @@
 import React from 'react';
 
-const orderSummary = (props) => {
+import Aux from '../../../hoc/Auxiliary';
 
+const orderSummary = (props) => {
+    return (
+        <Aux>
+            <h3>Your order</h3>
+            <p>A delicious burger with the following ingredients:</p>
+            <ul>
+                
+            </ul>
+        </Aux>
+    );
 };
 
 export default orderSummary;
