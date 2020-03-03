@@ -35,6 +35,7 @@ class BurgerBuilder extends Component {
     }
 
     componentDidMount() {
+        console.log(this.props);
         axios.get('https://react-the-burger-builder-54abb.firebaseio.com/ingredients.json')
         .then(response => {
             this.setState({ingredients: response.data});
@@ -97,28 +98,29 @@ class BurgerBuilder extends Component {
 
     purchaseContinueHandler = () => {
         //alert('You continue!');
-        this.setState({loading: true});
-        const order = {
-            ingredients: this.state.ingredients,
-            price: this.state.totalPrice,
-            customer: {
-                name: 'Oleg Zablotskyi',
-                address: {
-                    street: 'TestStreet',
-                    postalCode: 'L4X1T4',
-                    country: 'Canada'
-                },
-                email: 'test@gmail.com'
-            },
-            deliveryMethod: 'fastest'
-        };
-        axios.post('/order.json', order)
-            .then(response => {
-                    this.setState({loading: false, purchasing: false});
-                })
-            .catch(error => {
-                this.setState({loading: false, purchasing: false});
-            });
+        // this.setState({loading: true});
+        // const order = {
+        //     ingredients: this.state.ingredients,
+        //     price: this.state.totalPrice,
+        //     customer: {
+        //         name: 'Oleg Zablotskyi',
+        //         address: {
+        //             street: 'TestStreet',
+        //             postalCode: 'L4X1T4',
+        //             country: 'Canada'
+        //         },
+        //         email: 'test@gmail.com'
+        //     },
+        //     deliveryMethod: 'fastest'
+        // };
+        // axios.post('/order.json', order)
+        //     .then(response => {
+        //             this.setState({loading: false, purchasing: false});
+        //         })
+        //     .catch(error => {
+        //         this.setState({loading: false, purchasing: false});
+        //     });
+        this.props.history.push('/checkout');
     };
 
     render () {
