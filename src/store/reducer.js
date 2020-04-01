@@ -11,7 +11,7 @@ const initialState = {
 }
 
 const reducer = (state = initialState, action) => {
-    switch (actionTypes) {
+    switch (action.type) {
         case actionTypes.ADD_INGREDIENT:
             return {
                 ...state,
@@ -25,7 +25,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 ingredients: {
                     ...state.ingredients,
-                    [action.ingredientName]: state.ingredients[action.ingredientName] + 1
+                    [action.ingredientName]: state.ingredients[action.ingredientName] - 1
                 }
             };   
         default:
