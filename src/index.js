@@ -9,13 +9,15 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import reducer from '../src/store/reducer';
 
+const store = createStore(reducer);
+
 const app = (
+    <Provider store={store}>
     <BrowserRouter>
         <App />
     </BrowserRouter>
+    </Provider>
 );
 
-const store = createStore(reducer);
-
-ReactDOM.render(<Provider store={store}> app</Provider>, document.getElementById('root'));
+ReactDOM.render( app, document.getElementById('root'));
 registerServiceWorker();
