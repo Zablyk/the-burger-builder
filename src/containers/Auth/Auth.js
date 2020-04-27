@@ -94,13 +94,13 @@ inputChabgedHandler = (event, controlName) => {
                 changed={(event) => this.inputChabgedHandler(event, formElement.id)}/>
         ));
 
-        if(this.props.loading) {
+        if ( this.props.loading ) {
             form = <Spinner />
         };
 
         let errorMessage = null;
 
-        if (this.props.error) {
+        if ( this.props.error ) {
             errorMessage = (
             <p>{this.props.error.message}</p>
             );
